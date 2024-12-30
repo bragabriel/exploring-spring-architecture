@@ -18,6 +18,9 @@ public class Application {
 
 		builder.profiles("prod", "qa"); //setting profiles
 
+		builder.lazyInitialization(true); //setting beans to lazy initialization
+
+
 		builder.run(args); //running the application, same as the commented line above: SpringApplication.run(...)
 
 		//getting the application context after starting

@@ -3,11 +3,10 @@ package io.github.bragabriel.springarchitecture.automaker.configuration;
 import io.github.bragabriel.springarchitecture.automaker.Engine;
 import io.github.bragabriel.springarchitecture.automaker.EngineType;
 import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.*;
 
+@Lazy(false) //Default = false
+// if it is true = It will only be instantiated when the application uses it.
 @Configuration
 @Scope(BeanDefinition.SCOPE_SINGLETON) //Default Scope = Singleton
 //"request", "prototype", "session", "application", "websocket"
