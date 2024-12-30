@@ -2,15 +2,20 @@ package io.github.bragabriel.springarchitecture.automaker.configuration;
 
 import io.github.bragabriel.springarchitecture.automaker.Engine;
 import io.github.bragabriel.springarchitecture.automaker.EngineType;
+import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
 
 @Configuration
+@Scope(BeanDefinition.SCOPE_SINGLETON) //Default Scope = Singleton
+//"request", "prototype", "session", "application", "websocket"
 public class AutomakerConfiguration {
 
     @Primary
     @Bean(name = "combustionEngine")
+    @Scope("singleton")
     public Engine combustionEngine() {
         var engine = new Engine();
         engine.setHorsepower(120);
