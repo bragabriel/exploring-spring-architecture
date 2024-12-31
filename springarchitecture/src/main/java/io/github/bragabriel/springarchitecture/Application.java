@@ -1,5 +1,6 @@
 package io.github.bragabriel.springarchitecture;
 
+import io.github.bragabriel.springarchitecture.todos.ValueExample;
 import org.springframework.boot.Banner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -31,6 +32,11 @@ public class Application {
 		String applicationName = environment.getProperty("spring.application.name");
 		System.out.println("Application name: " + applicationName);
 
+		ValueExample value = applicationContext.getBean(ValueExample.class);
+		value.printVar();
+
+		AppProperties properties = applicationContext.getBean(AppProperties.class);
+		System.out.println(properties.getMyVar() + " " + properties.getMyValue());
 	}
 
 }

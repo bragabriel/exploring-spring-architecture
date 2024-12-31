@@ -2,6 +2,7 @@ package io.github.bragabriel.springarchitecture.automaker.configuration;
 
 import io.github.bragabriel.springarchitecture.automaker.Engine;
 import io.github.bragabriel.springarchitecture.automaker.EngineType;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.*;
 
@@ -15,9 +16,9 @@ public class AutomakerConfiguration {
     @Primary
     @Bean(name = "combustionEngine")
     @Scope("singleton")
-    public Engine combustionEngine() {
+    public Engine combustionEngine(@Value("${app.config.montadora.motor-padrao}") Integer horsePowers) {
         var engine = new Engine();
-        engine.setHorsepower(120);
+        engine.setHorsepower(horsePowers);
         engine.setCylinders(4);
         engine.setModel("XPTO-0");
         engine.setDisplacement(2.0);
