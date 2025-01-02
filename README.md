@@ -6,5 +6,7 @@ Topics Covered:
 - Dependency Injection (DI)
 - @Autowired and @Qualifier annotations
 - Bean lifecycle and configuration
+- Bean definition scope
+- @Value and local configurations
 - Application configuration with @Configuration and custom Beans
 - Application startup customization using SpringApplicationBuilder
